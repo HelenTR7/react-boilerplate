@@ -1,9 +1,22 @@
 import React from "react";
+import {Route, Routes} from "react-router-dom";
 
-import styles from "./styles.module.scss";
+import Header from "@components/header";
+import Home from "@pages/home";
+import About from "@pages/about";
+
+import styles from "./style.module.scss";
 
 const Layout = () => (
-    <div>React app</div>
+    <>
+        <Header/>
+        <main>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
+            </Routes>
+        </main>
+    </>
 );
 
 export default Layout;
